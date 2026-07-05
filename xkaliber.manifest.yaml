@@ -1,0 +1,31 @@
+project:
+  name: XKaliber
+  tagline: L’épreuve qui révèle le vrai calibre.
+  type: technology-agnostic starter repository
+  parent_ecosystem: Konnaxion
+  module_context:
+    - KonnectED
+    - CertifiKation
+    - EkoH
+    - SmartVote
+
+principles:
+  - adaptive
+  - explainable
+  - governable
+  - domain-bounded
+  - auditable
+  - contestable
+  - privacy-conscious
+
+primary_outputs:
+  - Profil de Calibre
+  - Sceau CertifiKation
+  - Signal EkoH borné par domaine
+
+not_for:
+  - global human scoring
+  - automatic exclusion without recourse
+  - opaque governance weighting
+  - public ranking without consent
+  - out-of-domain authority

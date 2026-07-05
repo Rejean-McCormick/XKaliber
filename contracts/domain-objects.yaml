@@ -1,0 +1,96 @@
+# Contrats conceptuels — objets de domaine
+
+Candidate:
+  purpose: Personne évaluée.
+  fields:
+    id: Identifiant interne ou pseudonyme.
+    display_name: Nom affiché selon consentement.
+    consent_status: Consentement actif, refusé ou révoqué.
+    preferred_language: Langue principale.
+    accessibility_needs: Besoins d’accessibilité, si fournis.
+
+CompetencyDomain:
+  purpose: Champ large de compétence.
+  fields:
+    id: Identifiant du domaine.
+    name: Nom lisible.
+    description: Description.
+    governance_body: Table de validation responsable.
+    version: Version du domaine.
+
+Competency:
+  purpose: Capacité précise dans un domaine.
+  fields:
+    id: Identifiant.
+    domain_id: Domaine parent.
+    name: Nom.
+    description: Description.
+    levels: Niveaux applicables.
+    evidence_required: Types de preuves attendues.
+
+AssessmentItem:
+  purpose: Question, tâche, simulation ou production.
+  fields:
+    id: Identifiant.
+    competency_id: Compétence ciblée.
+    level: Niveau de difficulté.
+    item_type: Type d’épreuve.
+    prompt: Consigne.
+    scoring_criteria: Critères.
+    bias_notes: Risques de biais.
+    validation_status: Brouillon, validé, retiré.
+    version: Version.
+
+AssessmentSession:
+  purpose: Évaluation vécue par une personne.
+  fields:
+    id: Identifiant.
+    candidate_id: Personne évaluée.
+    domain_id: Domaine.
+    competency_ids: Compétences couvertes.
+    started_at: Début.
+    ended_at: Fin.
+    rule_version: Version des règles.
+    status: En cours, terminée, contestée, annulée.
+
+CaliberProfile:
+  purpose: Rapport final de compétence.
+  fields:
+    id: Identifiant.
+    candidate_id: Personne évaluée.
+    session_id: Session source.
+    domain_id: Domaine.
+    confirmed_level: Calibre validé.
+    explored_level: Niveau exploré.
+    confidence: Marge de confiance.
+    strengths: Forces.
+    limitations: Limites.
+    recommendations: Prochaines étapes.
+    validity_conditions: Conditions de validité.
+    status: Actif, corrigé, contesté, expiré.
+
+CertifiKationSeal:
+  purpose: Preuve exportable.
+  fields:
+    id: Identifiant.
+    profile_id: Profil source.
+    domain_id: Domaine.
+    competency_id: Compétence.
+    confirmed_level: Niveau confirmé.
+    issued_at: Date d’émission.
+    valid_until: Date d’expiration.
+    status: Actif, expiré, contesté, révoqué.
+    usage_limits: Limites d’usage.
+
+EkoHSignal:
+  purpose: Signal résumé de crédibilité par domaine.
+  fields:
+    id: Identifiant.
+    source_profile_id: Profil source.
+    domain_id: Domaine.
+    competency_id: Compétence.
+    confirmed_level: Niveau confirmé.
+    confidence: Confiance.
+    consent_reference: Consentement.
+    valid_until: Expiration.
+    restrictions: Restrictions d’usage.

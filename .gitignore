@@ -1,0 +1,28 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Local notes
+*.local
+*.tmp
+
+# Build outputs, if added later
+/dist/
+/build/
+/out/
+
+# Dependencies, if added later
+/node_modules/
+/vendor/
+/.venv/
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+
+# Generated reports
+/generated/
+/exports/

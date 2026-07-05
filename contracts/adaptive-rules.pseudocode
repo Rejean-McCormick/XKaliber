@@ -1,0 +1,56 @@
+# Pseudocode — adaptation de difficulté
+
+INPUT:
+  candidate_estimate
+  target_competencies
+  item_bank
+  session_constraints
+
+START:
+  current_level = estimate_starting_level(candidate_estimate)
+  confidence = low
+  evidence = empty
+
+LOOP:
+  select item_block where:
+    item.level is near current_level
+    item.competency is in target_competencies
+    item is validated
+    item has not been overused
+    item does not create avoidable bias
+
+  present item_block
+  collect responses
+  score responses using declared criteria
+  update evidence
+  update level_estimate
+  update confidence
+
+  IF performance is very high AND confidence at current_level is sufficient:
+    mark current_level as confirmed
+    increase difficulty
+    continue
+
+  IF performance is moderate at higher level:
+    mark higher_level as partially demonstrated
+    continue until uncertainty is acceptable or constraints reached
+
+  IF performance is low at higher level:
+    mark higher_level as not confirmed
+    stabilize confirmed_level
+
+  IF confidence is sufficient AND ceiling explored:
+    stop
+
+  IF time or fatigue constraints reached:
+    stop with confidence note
+
+OUTPUT:
+  CaliberProfile:
+    confirmed_level
+    explored_level
+    confidence
+    strengths
+    limitations
+    recommendations
+    validity_conditions

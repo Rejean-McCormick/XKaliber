@@ -1,0 +1,89 @@
+# Contrats conceptuels — événements
+
+AssessmentRequested:
+  when: Une personne ou organisation demande une épreuve.
+  includes:
+    - candidate_id
+    - domain_id
+    - competency_ids
+    - purpose
+    - requested_by
+
+ConsentRecorded:
+  when: Le consentement est donné, refusé ou révoqué.
+  includes:
+    - candidate_id
+    - consent_status
+    - scope
+    - timestamp
+
+AssessmentStarted:
+  when: Une session commence.
+  includes:
+    - session_id
+    - candidate_id
+    - rule_version
+
+ItemPresented:
+  when: Un item est présenté.
+  includes:
+    - session_id
+    - item_id
+    - level
+    - competency_id
+
+ResponseSubmitted:
+  when: Une réponse ou production est soumise.
+  includes:
+    - session_id
+    - item_id
+    - response_reference
+    - timestamp
+
+DifficultyAdjusted:
+  when: Le moteur adapte la difficulté.
+  includes:
+    - session_id
+    - previous_level
+    - next_level
+    - reason
+    - rule_version
+
+AssessmentCompleted:
+  when: La session est terminée.
+  includes:
+    - session_id
+    - status
+    - completion_reason
+
+CaliberProfileCreated:
+  when: Un profil est généré.
+  includes:
+    - profile_id
+    - session_id
+    - confirmed_level
+    - confidence
+
+CertifiKationSealIssued:
+  when: Une preuve est créée.
+  includes:
+    - seal_id
+    - profile_id
+    - confirmed_level
+    - valid_until
+
+ResultContested:
+  when: Une personne conteste un résultat.
+  includes:
+    - profile_id
+    - reason
+    - requested_by
+    - timestamp
+
+ProfileCorrected:
+  when: Un profil est corrigé.
+  includes:
+    - profile_id
+    - correction_reason
+    - previous_status
+    - new_status
