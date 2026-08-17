@@ -6,6 +6,8 @@ XKaliber est un moteur d’évaluation adaptative qui transforme des performance
 
 Il ne remplace pas CertifiKation. Il fournit la mesure qui permet à CertifiKation d’attester.
 
+Lorsqu’une preuve XKaliber doit contribuer à la réputation EkoH, elle ne contourne pas la couche d’évidence. Le Profil de Calibre ou le Sceau CertifiKation est transmis à **K-Port**, qui agit comme passerelle canonique d’évidence vers EkoH. K-Port vérifie la provenance, le statut, la portée, le consentement et le mapping de domaine sans recalculer la performance évaluée par XKaliber.
+
 ## Chaîne conceptuelle
 
 ```text
@@ -15,8 +17,11 @@ Parcours d’apprentissage
 → Épreuve adaptative
 → Profil de Calibre
 → Sceau CertifiKation
-→ Portfolio KonnectED
-→ Signal possible vers EkoH
+→ Portfolio KonnectED, si souhaité
+→ Handoff de preuve vers K-Port
+→ Contrôle de provenance, statut, portée et consentement par K-Port
+→ Signal admissible vers EkoH
+→ Calcul de réputation par EkoH
 → Usage gouverné dans Konnaxion
 ```
 
@@ -66,14 +71,16 @@ XKaliber ne devrait pas contenir toute la logique de :
 - gestion RH ;
 - identité permanente.
 
-Ces fonctions appartiennent à KonnectED, CertifiKation, EkoH, SmartVote, Orgo ou d’autres modules.
+Ces fonctions appartiennent à KonnectED, CertifiKation, **K-Port**, EkoH, SmartVote, Orgo ou d’autres modules.
+
+En particulier, XKaliber ne doit pas devenir une seconde couche d’intake ou de scoring réputationnel : K-Port centralise l’évidence admissible et EkoH reste l’autorité de scoring.
 
 ## Sorties
 
 XKaliber produit principalement :
 
 - un profil ;
-- des preuves ;
+- des preuves structurées ;
 - des recommandations ;
 - des traces ;
-- des signaux bornés par domaine.
+- des paquets d’évidence bornés par domaine destinés à CertifiKation et, lorsque requis, à K-Port.

@@ -12,7 +12,7 @@
 - journal d’audit ;
 - consentement ;
 - explication du résultat ;
-- export conceptuel.
+- export conceptuel vers CertifiKation et K-Port.
 
 ## Exclu du MVP
 
@@ -20,6 +20,7 @@
 - gestion complète des cours ;
 - pondération SmartVote active ;
 - score EkoH automatisé ;
+- intégration directe XKaliber → EkoH ou XKaliber → SmartVote ;
 - correction avancée par IA ;
 - épreuves de haute sécurité ;
 - surveillance vidéo ;

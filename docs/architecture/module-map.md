@@ -86,7 +86,8 @@ Définit les échanges avec :
 
 - KonnectED ;
 - CertifiKation ;
-- EkoH ;
-- SmartVote ;
+- **K-Port, passerelle canonique d’évidence vers EkoH** ;
 - Konnaxion ;
 - systèmes externes autorisés.
+
+XKaliber ne pousse pas directement de résultat de compétence dans le moteur de réputation EkoH ni dans SmartVote. Les usages réputationnels passent par K-Port, puis par les interfaces gouvernées d’EkoH.

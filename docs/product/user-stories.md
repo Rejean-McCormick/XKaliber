@@ -42,11 +42,11 @@ En tant qu’organisation, je veux savoir quelles limites s’appliquent au prof
 
 ### US-009
 
-En tant que membre de Konnaxion, je veux que mes compétences validées puissent enrichir mon profil par domaine, avec mon consentement.
+En tant que membre de Konnaxion, je veux que mes compétences validées puissent être transmises à K-Port et, si elles sont admissibles, enrichir mon profil EkoH par domaine avec mon consentement.
 
 ### US-010
 
-En tant que communauté, je veux utiliser les preuves XKaliber dans des processus de gouvernance sans transformer l’expertise en autorité opaque.
+En tant que communauté, je veux que les preuves XKaliber utilisées dans la gouvernance passent par les couches de preuve et de réputation gouvernées, sans transformer l’expertise en autorité opaque.
 
 ## Gouvernance
 

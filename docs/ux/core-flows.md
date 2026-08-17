@@ -48,13 +48,18 @@ Profil contesté
 → Journal d’audit mis à jour
 ```
 
-## Flux 5 — Alimenter EkoH
+## Flux 5 — Alimenter EkoH via K-Port
 
 ```text
-Profil de Calibre
+Profil de Calibre / Sceau CertifiKation
 → Consentement
-→ Résumé borné par domaine
-→ Contrôle des limites
-→ Signal envoyé vers EkoH
+→ Paquet d’évidence borné par domaine
+→ Handoff vers K-Port
+→ Contrôle de provenance, statut, portée, identité et consentement
+→ Mapping / admissibilité K-Port
+→ Signal transmis par K-Port à EkoH
+→ EkoH décide de l’impact réputationnel
 → Affichage explicable dans le profil Konnaxion
 ```
+
+Une contestation du **résultat d’évaluation** retourne vers XKaliber. Une contestation de **l’admissibilité ou du mapping de l’évidence** relève de K-Port. Une contestation du **score de réputation** relève d’EkoH.
