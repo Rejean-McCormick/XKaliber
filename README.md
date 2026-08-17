@@ -1,33 +1,33 @@
 # XKaliber
 
-**L’épreuve qui révèle le vrai calibre.**
+**The assessment that reveals true calibre.**
 
-XKaliber est le moteur de mesure adaptative des compétences de **CertifiKation**, dans **KonnectED**, un module de **Konnaxion**.
+XKaliber is the adaptive competency assessment engine of **CertifiKation**, within **KonnectED**, a module of **Konnaxion**.
 
-Le dépôt est volontairement **agnostique technologiquement**. Il ne prescrit aucun framework, langage, base de données ou fournisseur. Il sert de point de départ produit, fonctionnel, architectural et gouvernance pour concevoir l’application avant les choix techniques.
+This repository is intentionally **technology-agnostic**. It does not prescribe any framework, programming language, database, or provider. It serves as a product, functional, architectural, and governance starting point for designing the application before technical choices are made.
 
-## Idée centrale
+## Core idea
 
-Un test uniforme mesure surtout l’adéquation à un test. XKaliber mesure plutôt le niveau auquel une personne demeure fiable.
+A uniform test mostly measures how well someone fits the test. XKaliber instead measures the level at which a person remains reliably competent.
 
-Le système commence par valider les acquis, puis ajuste graduellement la difficulté pour révéler :
+The system starts by validating existing knowledge and skills, then gradually adjusts difficulty to reveal:
 
-- ce que la personne maîtrise confortablement ;
-- le seuil où sa compétence reste fiable ;
-- la limite supérieure à explorer ;
-- les zones d’incertitude ;
-- la preuve exportable vers CertifiKation ;
-- les signaux pouvant alimenter un profil de crédibilité par domaine dans Konnaxion.
+- what the person can perform comfortably;
+- the threshold at which their competency remains reliable;
+- the upper boundary worth exploring;
+- areas of uncertainty;
+- evidence that can be exported to CertifiKation;
+- structured competency evidence that can be routed through **K-Port** to **EkoH** for domain-bounded reputation processing within Konnaxion.
 
-## Métaphore de marque
+## Brand metaphor
 
-Dans le mythe, Excalibur est l’épreuve qui révèle qui peut porter une fonction.
+In the myth, Excalibur is the trial that reveals who is capable of carrying a role.
 
-Dans Konnaxion, **XKaliber** devient l’épreuve qui révèle quelle compétence, quelle responsabilité ou quelle décision une personne peut porter.
+Within Konnaxion, **XKaliber** becomes the assessment that reveals which competency, responsibility, or decision a person is equipped to carry.
 
-La Table ronde devient opérante : les personnes ne sont pas seulement entendues ; leurs compétences sont situées, leur expertise est bornée par domaine, et la gouvernance collective peut s’appuyer sur des preuves explicites plutôt que sur le statut, le bruit ou la popularité.
+The Round Table becomes operational: people are not merely heard; their competencies are situated, their expertise is bounded by domain, and collective governance can rely on explicit evidence rather than status, noise, or popularity.
 
-## Structure du dépôt
+## Repository structure
 
 ```text
 xkaliber-starter/
@@ -54,40 +54,63 @@ xkaliber-starter/
 └─ decisions/
 ```
 
-## Principe de conception
+## Design principles
 
-XKaliber doit rester :
+XKaliber must remain:
 
-1. **adaptatif** — la difficulté change selon la performance ;
-2. **explicable** — la personne comprend comment son profil est produit ;
-3. **gouvernable** — les règles, seuils et pondérations sont visibles et révisables ;
-4. **borné par domaine** — une compétence validée ne donne pas une autorité générale ;
-5. **utile** — le résultat sert à apprendre, embaucher, certifier ou orienter ;
-6. **contestable** — les erreurs, biais ou anomalies doivent pouvoir être révisés ;
-7. **exportable** — les preuves peuvent circuler dans CertifiKation, KonnectED, EkoH et Konnaxion.
+1. **adaptive** — difficulty changes according to performance;
+2. **explainable** — the person understands how their profile is produced;
+3. **governable** — rules, thresholds, and weightings are visible and revisable;
+4. **domain-bounded** — a validated competency does not grant general authority;
+5. **useful** — results support learning, hiring, certification, or guidance;
+6. **contestable** — errors, bias, and anomalies must be reviewable;
+7. **exportable** — assessment evidence can flow into CertifiKation and, through K-Port, into EkoH and the wider Konnaxion ecosystem.
 
-## Premier objectif MVP
+## Integration boundary
 
-Créer une version initiale capable de :
+XKaliber is responsible for **measuring competency and producing assessment evidence**. It does not calculate a person's final reputation or authority within Konnaxion.
 
-- définir des domaines et compétences ;
-- lancer une évaluation adaptative simple ;
-- ajuster la difficulté après chaque bloc de questions ou tâches ;
-- produire un Profil de Calibre ;
-- générer une preuve CertifiKation ;
-- expliquer le résultat à la personne évaluée et à l’organisation ;
-- enregistrer les décisions d’évaluation de manière auditable.
+The intended flow is:
 
-## À ne pas décider trop tôt
+```text
+XKaliber
+   ↓
+Calibre Profile
+   ↓
+CertifiKation evidence
+   ↓
+K-Port
+   ↓
+EkoH
+   ↓
+Governed downstream use in Konnaxion
+```
 
-Ce dépôt évite volontairement de choisir :
+**CertifiKation** attests the XKaliber result. **K-Port** is the canonical evidence gateway: it validates provenance, status, scope, consent, and domain mapping without re-scoring the XKaliber assessment. **EkoH** is responsible for transforming qualified evidence into domain-bounded reputation signals.
 
-- langage de programmation ;
-- framework front-end ;
-- base de données ;
-- fournisseur d’IA ;
-- infrastructure cloud ;
-- protocole d’identité définitif ;
-- format final des certificats.
+## Initial MVP objective
 
-Ces choix doivent venir après la validation des besoins, des flux, du modèle de compétence et du niveau de preuve exigé.
+Create an initial version capable of:
+
+- defining domains and competencies;
+- launching a simple adaptive assessment;
+- adjusting difficulty after each block of questions or tasks;
+- producing a Calibre Profile;
+- generating CertifiKation evidence;
+- explaining the result to the assessed person and the organization;
+- recording assessment decisions in an auditable manner;
+- exporting structured assessment evidence for ingestion by K-Port.
+
+## Decisions not to make too early
+
+This repository intentionally avoids choosing:
+
+- programming language;
+- front-end framework;
+- database;
+- AI provider;
+- cloud infrastructure;
+- final identity protocol;
+- final certificate format.
+
+These choices should be made only after validating the needs, workflows, competency model, integration boundaries, and required level of evidence.
